@@ -7,6 +7,8 @@
                 href="{% url 'dj-post-list' %}" >All Posts</a>
             {% if user.is_authenticated %}
                 <a class="list-group-item list-group-item-action bg-gray"
+                    href="{% url 'dj-post-create' %}"><b>Add Post</b></a> 
+                <a class="list-group-item list-group-item-action bg-gray"
                     href="{% url 'profile' %}"><b>My Profile</b></a>
             {% endif %}
             <a class="list-group-item list-group-item-action bg-light"

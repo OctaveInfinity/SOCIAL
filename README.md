@@ -7,7 +7,8 @@ The project was built in the Python, using Django and Django Rest frameworks.
 Functional snapshot:
 
     DJANGO
-        PostList, Profile views
+        CRUD posts
+        CRU_ user's Profile with Image
         SignUp, LogIn, LogOut
 
     ADMIN
