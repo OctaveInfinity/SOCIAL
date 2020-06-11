@@ -8,5 +8,7 @@ Functional snapshot:
 
     DJANGO
         PostList view
+        Create users 
+
     ADMIN
-        CRUD posts
+        CRUD posts, users
