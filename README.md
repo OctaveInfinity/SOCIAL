@@ -1,7 +1,7 @@
-# Simple social-network
+## A simple social-network
 
-This is a prototype of a simple social-network. 
-The project was built in the Python language, Django and Django Rest frameworks.
+This is a prototype. 
+The project was built in the Python, using Django and Django Rest frameworks.
 
 
 Functional snapshot:
