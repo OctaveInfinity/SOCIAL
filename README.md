@@ -7,8 +7,8 @@ The project was built in the Python language, Django and Django Rest frameworks.
 Functional snapshot:
 
     DJANGO
-        PostList view
-        Create users 
+        PostList, Profile views
+        SignUp, LogIn, LogOut
 
     ADMIN
         CRUD posts, users
