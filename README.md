@@ -4,12 +4,12 @@ This is a prototype.
 The project was built in the Python, using Django and Django Rest frameworks.
 
 
-Functional snapshot:
+The snapshot of basic functionality
 
-    DJANGO
-        CRUD posts
-        CRU_ user's Profile with Image
-        SignUp, LogIn, LogOut
+Django WEB 
+- CRUD posts, CRU_ users
+- Profile with avatar
+- SignUp, LogIn, LogOut
 
-    ADMIN
-        CRUD posts, users
+DRF API
+- CRUD posts, users

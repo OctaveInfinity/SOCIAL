@@ -29,6 +29,9 @@ urlpatterns = [
 
     path('social/', include('post.urls')),
     path('users/', include('users.urls')),
+
+    path('api/', include('api.urls')),
+    path('api/auth/', include('rest_framework.urls')),
 ]
 
 if settings.DEBUG:
