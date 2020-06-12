@@ -17,10 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', views.index, name='index'),
+    path('brand/', views.brand, name='brand'),
+    path('contact/', views.contact, name='contact'),
 
     path('social/', include('post.urls')),
     path('users/', include('users.urls')),

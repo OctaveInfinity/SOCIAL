@@ -14,7 +14,9 @@
                     href="{% url 'profile' %}"><b>My Profile</b></a>
             {% endif %}
             <a class="list-group-item list-group-item-action bg-light"
-                href="#" >Contact Us </a>
+                href="{% url 'index' %}" >Start page</a>
+            <a class="list-group-item list-group-item-action bg-light"
+                href="{% url 'contact' %}" >Contact Us</a>
             <a class="list-group-item list-group-item-action bg-light"
                 href="{% url 'admin:index' %}" >interface - Admin</a>      
         </div>

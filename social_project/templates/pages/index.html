@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+	<h4>Wellcome!</h4>
+	<p>
+		<br>
+		This is a prototype of a simple social-network.
+	</p>
+	<p>
+		<br>
+		To take full advantage of this website, 
+		please<a class="ml-2" href="{% url 'register' %}">Register</a>
+		first and then<a class="ml-2" href="{% url 'login' %}">Login</a>.
+	</p>
+	<p>After these steps <b>you can</b>:</p>
+	<ul>
+		<li><b>add</b> new <U>posts</U> and <b>manage</b> <U>them</U>;</li>
+		<li><b>like/unlike</b> other users' <U>posts</U>;</li>
+		<li><b>edit</b> your <U>profile</U>.</li>
+	</ul>
+	<p>
+		<br>
+		If you are already registered on this site,
+		just<a class="ml-2" href="{% url 'login' %}">Login</a>.
+	</p>
+	<p>
+		<br>
+		To get full access via api-interface you need to contact us.
+	</p>
+{% endblock content %}
