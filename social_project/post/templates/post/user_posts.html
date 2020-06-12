@@ -10,8 +10,9 @@
                     <small class="text-muted mr-4">{{ post.posted|date:"F d, Y" }}</small>
                 </div>
                 <h5><a class="article-title" href="{% url 'dj-post-detail' post.id %}">{{ post.title }}</a></h5>
-                <p class="article-content">{{ post.content }}</p>
+                <p class="article-content">{{ post.content  |truncatewords:10 }}</p>
             </div>
         </article>
     {% endfor %}
+    {% include 'partials/_pagination.html' %}
 {% endblock content %}
