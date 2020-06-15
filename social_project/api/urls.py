@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 
-from .views import api_root, UserViewSet, PostViewSet
+from .views import api_root, UserViewSet, PostViewSet, PostLikeAPIToggle
 
 
 user_list   = UserViewSet.as_view({ 'get': 'list',
@@ -31,4 +31,8 @@ urlpatterns = format_suffix_patterns([
     
     path('posts/',                  post_list,      name='post-list'),
     path('posts/<int:pk>/',         post_detail,    name='post-detail'),
+    path('posts/<int:pk>/like/',    
+          PostLikeAPIToggle.as_view(), 
+          name='post-like-api-toggle'
+        ),
 ])

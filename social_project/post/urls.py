@@ -6,6 +6,7 @@ from .views import (
     PostUpdateView,
     PostDeleteView,
     UserPostListView,
+    PostLikeToggle,
 )
 
 
@@ -15,5 +16,6 @@ urlpatterns = [
     path('create/', PostCreateView.as_view(), name='dj-post-create'),
     path('<int:pk>/update/', PostUpdateView.as_view(), name='dj-post-update'),
     path('<int:pk>/delete/', PostDeleteView.as_view(), name='dj-post-delete'),
+    path('<int:pk>/like/', PostLikeToggle.as_view(), name='dj-post-like-toggle'),
     path('user/<str:username>', UserPostListView.as_view(), name='dj-user-posts'),
 ]

@@ -21,6 +21,14 @@ class Post(models.Model):
                                 on_delete=models.CASCADE
                                 )
             
+    liked = models.ManyToManyField(
+                                User,
+                                default=None,
+                                blank=True,
+                                related_name='liked',
+                                )    
+    
+    
     class Meta:
         ordering = ['-posted']
 
@@ -32,3 +40,13 @@ class Post(models.Model):
 
     def get_api_url(self, request=None):
         return drf_reverse("post-detail", kwargs={'pk': self.pk})
+
+    def get_like_url(self):
+        return dj_reverse("dj-post-like-toggle", kwargs={'pk': self.pk})
+       
+    def get_api_like_url(self):
+        return drf_reverse("post-like-api-toggle", kwargs={'pk': self.pk})
+
+    @property
+    def liked_count(self):
+        return self.liked.count

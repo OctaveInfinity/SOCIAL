@@ -15,6 +15,7 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
             'id',
             'title',
             'content',
+            'liked_count',
             'owner'
         ]
 

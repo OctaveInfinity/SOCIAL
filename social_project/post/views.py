@@ -6,7 +6,8 @@ from django.views.generic import (
     DetailView,
     CreateView,
     UpdateView,
-    DeleteView
+    DeleteView,
+    RedirectView,
 )
 
 from .models import Post
@@ -38,6 +39,16 @@ class UserPostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(PostDetailView, self).get_context_data()
+        post = get_object_or_404(Post, id=self.kwargs['pk'])
+        user = self.request.user
+        like_button = "Like"
+        if user in post.liked.all():
+            like_button = "Unlike"
+        context["like_button"] = like_button
+        return context
 
 
 
@@ -76,3 +87,15 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.owner:
             return True
         return False
+
+
+
+class PostLikeToggle(LoginRequiredMixin, RedirectView):
+    def get_redirect_url(self, *args, **kwargs):
+        post = get_object_or_404(Post, id=self.kwargs['pk'])
+        user = self.request.user
+        if user in post.liked.all():
+            post.liked.remove(user)
+        else:
+            post.liked.add(user)
+        return post.get_absolute_url()

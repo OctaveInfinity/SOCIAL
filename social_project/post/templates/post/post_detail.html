@@ -6,6 +6,13 @@
             <div class="article-metadata">
                 <a class="mr-4" href="{% url 'dj-user-posts' object.owner.username %}">{{ object.owner }}</a>
                 <small class="text-muted mr-4" >{{ object.posted|date:"F d, Y" }}</small>
+                <a
+                    class="like-btn ml-auto"
+                    data-href='{{ object.get_api_like_url }}' 
+                    data-likes='{{ object.liked.count }}' 
+                    href='{{ object.get_like_url }}'>
+                    {{ object.liked.count }} {{ like_button }}
+                </a>                
                 {% if object.owner == user %}
                     <div>
                         <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="{% url 'dj-post-update' object.id %}">Update</a>

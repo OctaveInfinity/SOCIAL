@@ -10,8 +10,10 @@ Django WEB
 - CRUD posts, CRU_ users
 - Profile with avatar
 - SignUp, LogIn, LogOut
+- Like/Unlike posts
 
 DRF API
 - CRUD posts, users
 - Token authentication
 - Automated testing
+- Like/Unlike posts
