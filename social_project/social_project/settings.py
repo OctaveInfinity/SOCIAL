@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'crispy_forms', # forms manager
 
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +143,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10, 
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
