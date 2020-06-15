@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse as dj_reverse
+from rest_framework.reverse import reverse as drf_reverse
 
 
 
@@ -28,3 +29,6 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return dj_reverse('dj-post-detail', kwargs={'pk': self.pk})
+
+    def get_api_url(self, request=None):
+        return drf_reverse("post-detail", kwargs={'pk': self.pk})

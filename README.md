@@ -14,3 +14,4 @@ Django WEB
 DRF API
 - CRUD posts, users
 - Token authentication
+- Automated testing
