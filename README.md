@@ -17,3 +17,6 @@ DRF API
 - Token authentication
 - Automated testing
 - Like/Unlike posts
+
+Command line
+- AUTOBOT (usres, posts and likes according to the config-file)
